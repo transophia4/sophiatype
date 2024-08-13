@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from '../sophiatype/node_modules/react-type-animation/dist/index.js';
 import './App.css'
 import { COLORS } from './colors.js'
 import SpeedTypingGame from './SpeedTypingGame.jsx';

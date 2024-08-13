@@ -1,4 +1,4 @@
-import React from "react";
+import Reaxt from "react";
 import { COLORS } from "./colors.js"
 const TypingArea = ({
     typingText,

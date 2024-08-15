@@ -156,9 +156,9 @@ const SpeedTypingGame = () => {
                     setIsOpen(true);
                     setIsTyping(false);
                 } else {
-                    characters[charIndex + 1].classList.add('active');
-                    characters[charIndex].classList.remove('active');
-                    characters[charIndex].classList.add('correct');
+                    characters[charIndex].classList.add('active');
+                    characters[charIndex-1].classList.remove('active');
+                    characters[charIndex-1].classList.add('correct');
                 }
             } else {
                 setCharIndex(charIndex + 1);
@@ -172,8 +172,8 @@ const SpeedTypingGame = () => {
                     setIsTyping(false);
                 } else {
                     characters[charIndex].classList.remove('active');
-                    characters[charIndex + 1].classList.add('active');
-                    characters[charIndex].classList.add('wrong');
+                    characters[charIndex - 1].classList.add('active');
+                    characters[charIndex - 1].classList.add('wrong');
                 }
             }
 

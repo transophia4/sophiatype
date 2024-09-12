@@ -46,17 +46,7 @@ function App() {
       />
       </div>
       <SpeedTypingGame />
-      <div className='person'>
-          <button style = {{background: colorTheme}} onClick={ () => handleColorChange(COLORS.sophia)}>
-            Charles
-          </button>
-          <button style = {{background: colorTheme}} onClick={ () => handleColorChange(COLORS.sophia)}>
-            Olympia
-          </button>
-          <button style = {{background: colorTheme}} onClick={ () => handleColorChange(COLORS.sophia)}>
-            Everyone
-          </button>
-      </div>
+    
     </div>
     </div>
   );

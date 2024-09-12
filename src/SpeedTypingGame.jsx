@@ -149,31 +149,29 @@ const SpeedTypingGame = () => {
             if (typedChar === currentChar) {
                 setCharIndex(charIndex + 1);
                 if (charIndex >= characters.length - 1) {
-                    characters[charIndex - 1].classList.remove('active');
                     characters[charIndex].classList.remove('active');
                     characters[charIndex].classList.add('correct');
                     getResponse();
                     setIsOpen(true);
                     setIsTyping(false);
                 } else {
-                    characters[charIndex].classList.add('active');
-                    characters[charIndex-1].classList.remove('active');
-                    characters[charIndex-1].classList.add('correct');
+                    characters[charIndex].classList.remove('active');
+                    characters[charIndex].classList.add('correct');
+                    characters[charIndex+1].classList.add('active');
                 }
             } else {
                 setCharIndex(charIndex + 1);
                 setMistakes(mistakes + 1);
                 if (charIndex >= characters.length - 1) {
-                    characters[charIndex - 1].classList.remove('active');
-                    characters[charIndex].classList.remove('active');
+                    characters[charIndex - 1].classList.remove('active');                    characters[charIndex].classList.remove('active');
                     characters[charIndex].classList.add('wrong');
                     getResponse();
                     setIsOpen(true);
                     setIsTyping(false);
                 } else {
                     characters[charIndex].classList.remove('active');
-                    characters[charIndex - 1].classList.add('active');
-                    characters[charIndex - 1].classList.add('wrong');
+                    characters[charIndex].classList.add('wrong');
+                    characters[charIndex+1].classList.add('active');
                 }
             }
 
@@ -247,7 +245,7 @@ const SpeedTypingGame = () => {
             {}
             <TypingArea typingText = {typingText} inpFieldValue = {inpFieldValue} timeLeft = {timeLeft} mistakes = {mistakes} WPM = {WPM} 
                 initTyping = {initTyping} handleKeyDown = {handleKeyDown} resetGame = {resetGame} />
-            <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+            <Dialog style = {{width: 500}} open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
                 <div>
                 <DialogPanel>
                     <DialogTitle className="font-bold">{response}</DialogTitle>
